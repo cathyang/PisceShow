@@ -1,0 +1,11 @@
+<?php
+
+echo $this->data[error];
+if ($this->data[mail])
+{
+    echo "check the mail sent to " . $this->data[mail];
+}
+?>
+
+<br />
+<a href="<?php echo $this->baseUrl();?>/index/index" id="back">主页</a>

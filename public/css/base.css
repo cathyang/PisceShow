@@ -1,0 +1,568 @@
+* {
+    margin: 0;
+	padding: 0;
+}
+body {
+	margin: 0;
+	padding: 0;
+	font-size:13px;font-family:Arial,Helvetica,'ËÎÌå',sans-serif;
+	background:#fff;
+}
+
+.layout {
+    margin: 0 auto;
+    width: 960px;  
+}
+a {
+	text-decoration:none;
+}
+
+
+a:link,a:visited {
+    color: #333;
+	text-decoration:none;
+}
+
+a:hover {
+    color: #FF6600;
+	text-decoration:none;
+	display: inline ; 
+	background:#CCFFCC;
+}
+
+a img {
+    border: 0;
+}
+img {
+		vertical-align:middle;
+}
+	
+input,select,textarea {
+    font-size: 12px;
+}
+h1 {
+    font-size: 16px;
+	color:#00CC33;
+	margin-bottom:5px;
+	margin-left:10px;
+}
+
+h2 {
+    font-size: 14px;
+	color:#00CC33;
+}
+
+h3 {
+    font-size: 13px;
+}
+
+h4 {
+    font-size: 11px;
+}
+
+ul {
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+
+
+.altbg1{
+	width:80px;
+}
+.left{
+	float:left;
+}
+.right{
+	float:right;
+}
+
+
+.color1 {
+	color:#FF0000 !important;
+}
+
+.color2 {
+	color:#FF6600 !important;
+}
+.color4 {
+	color:#00CC33 !important;
+}
+
+.max100 {
+	height:100px;
+	width:100px;
+
+}
+.max70 {
+	height:70px;
+	width:70px;
+}
+.max150 {
+	height:150px;
+	width:150px;
+}
+.list {
+	width:100%;
+}
+.li4 li{
+	float:left;
+	margin-left:10px;
+	margin-top:10px;
+}
+.c {
+	text-align:center;
+}
+.f14 {
+	font-size:14px;
+}
+.b {
+	font-weight:bold;
+}
+.p2 {
+	padding:2px;
+}
+.border1 {
+	border:1px solid #CCCCCC;
+}
+.line-bx3 {
+	border-bottom:1px dotted #BDBDBD !important;
+}
+.p10 {
+	padding:10px 0px 10px 0px;
+}
+.m10 {
+	margin:10px 0px;
+}
+.point{
+	color:red;
+}
+
+.bh, .area {
+	line-height:18px;
+	margin-bottom:10px;
+	overflow:hidden;
+	width:auto;
+}
+
+
+
+/* haker */
+.clear {
+    clear:both;
+}
+
+.clearer:after {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+	.clearer {display: inline-table;}
+	/* Hides from IE-mac \*/
+*	html .clearer {height: 1%;}
+	.clearer {display: block;}
+	/* End hides */
+
+
+
+
+#logo a {
+    display: block;
+    width: 230px;
+    height: 65px;
+    background: url(../images/slogo.jpg) no-repeat;
+}
+    #logo a span {
+        display: none;
+    }
+
+
+#nav {
+    height: 29px;
+}
+
+#nav li {
+    display: block;
+    float: left;
+    margin-right:5px;
+    font-size: 13px;
+    font-weight:bold;
+}
+    #nav li a:link,#nav li a:visited{
+		cursor:pointer;
+		float: left;
+		display: block;	
+		color: #333;
+	}
+     #nav li a:hover {
+        color: #FFA472;
+		background:#CCFFCC;
+    }
+	
+	
+	#nav a:link span,#nav a:visited span {
+		float: left;
+		display: block;
+		padding: 0 18px;
+        height: 29px;
+        line-height: 29px;
+	}
+	#nav li a.cur:link span,#nav li a.cur:visited span {
+        color: #FFA472;  
+		background:#CCFFCC;
+	} 
+
+#container{
+	border-top:1px solid #CCFFCC;
+}
+
+
+#container #sidebar{
+	width:270px;
+	border-top:0px;
+}
+#sidebar legend {
+	color:#00CC33;
+	font-size:14px;
+	font-weight:bold;
+	padding:0 6px;
+}
+legend a:visited{
+	color:#00CC33;
+}
+
+#sidebar fieldset{
+	padding:5px 10px 5px 10px;
+	margin:12px 0px 20px 0px;
+	border:1px solid #EEEEEE;
+	
+}
+#sidebar fieldset ul {
+	width:250px;
+}
+#sidebar fieldset ul li{
+		word-wrap: break-word;
+		word-break: break-all;
+}
+	#linktext{
+		margin-top:15px;
+	}
+	#linktext p {
+		line-height:20px;
+		margin:0px 10px 0px 10px;
+	}
+	#linktext .linkcode {
+		font-size:13px;
+		height:100px;
+		width:220px;
+		margin:5px 0px 10px 20px;
+	}
+		
+	#linktext p {
+		color:#000000;
+		font-size:12px;
+		line-height:20px;
+		margin:0 0 3px 20px;
+		text-align:left;
+	}
+
+
+
+#contents {
+	 width:680px;
+	 margin:10px 0px 20px 0px;
+	 display: block;
+	
+}
+	legend {
+		color:#00CC33;
+		font-size:14px;
+		font-weight:bold;
+		padding:0 6px;
+	}
+	
+	fieldset {
+		border:1px solid #EEEEEE;
+		padding:5px 20px 10px;
+		margin-bottom:15px;
+	}
+	
+	#contents .category{
+		display: block;
+		color: #FFA472; 
+		float:left;
+		height:20px;
+		line-height:20px;
+		padding:0 10px;
+		font-size:13px;
+	}
+	#article{
+		padding:10px;
+	}
+	#contents p{
+		line-height:24px;
+		margin-bottom:15px;
+	}
+	#contents p a{
+	    color: #FF6600;
+		text-decoration:none;
+		display: inline ; 
+	}
+	#contents ul {
+		margin:0px 0px 10px 10px;
+		color:#CCCCCC;
+	}
+	#contents  .listarticle li{
+		display: block;
+	    float: left;
+	    margin-right:10px;
+	    font-size: 13px;
+		word-wrap: break-word;
+		word-break: break-all;
+	}
+	
+	#contents .articlelist{
+		width:320px;
+		line-height:25px;
+		padding:10px 5px 10px 5px;
+	}
+	#contents table th{
+		text-align:left;
+	}
+	#contents table tr{
+		height:30px;
+	}			
+	.wordlink li{
+		display: block;
+	    float: left;
+		line-height:20px;
+	    width:148px;
+		word-wrap: break-word;
+		word-break: break-all;
+	}
+	#contents  .imagelink li{
+		display: block;
+	    float: left;
+		line-height:50px;
+	    width:120px;
+		text-align:center;
+	}
+	
+
+
+/*ÆÀÂÛ*/	
+
+.commentlist {
+	background-color:#FFFFFF;
+	padding:5px;
+}
+.comcontent{
+	margin-bottom:30px;
+}
+.comcontent .comleft {
+	float:left;
+	height:100px;
+	width:100px;
+	text-align:center;
+}
+.comcontent .comleft img{
+	margin-bottom:5px;
+}
+.comcontent .comright {
+	float:left;
+	margin:0 0 0 10px;
+}
+.comcontent .combot {
+	background:url("../images/combotw.gif") no-repeat scroll 0 0 transparent;
+	height:16px;
+	margin:0 0 0 20px;
+	padding:0;
+	width:450px;
+}
+.comcontent .comtop {
+	background:url("../images/comtopw.gif") no-repeat scroll 0 0 transparent;
+	height:9px;
+	margin:0 0 0 20px;
+	padding:0;
+	width:450px;
+}
+.comcontent .comtext {
+	background:url("../images/combgw.gif") no-repeat scroll 0 0 transparent;
+	border:0 none;
+	clear:both;
+	height:auto;
+	line-height:15px;
+	margin:0 0 0 5px;
+	overflow:hidden;
+	padding:0 15px 0 20px;
+	text-align:left;
+	width:430px;
+	word-wrap:break-word;
+}
+.comcontent .comment {
+	padding:0 10px;
+	width:430px;
+}
+.comcontent .comleft img {
+	border:1px solid #DDDDDD;
+	display:inline;
+	float:left;
+	height:100px;
+	margin-right:6px;
+	position:relative;
+}
+
+	
+
+
+/*Ò³½Å*/
+#footer {
+	margin:0 auto;
+	width:975px;
+	margin-top:20px;
+	
+}
+#footer .lines{
+	border-top: 1px solid #CCFFCC; 
+	height: 1px;
+	margin-bottom:10px;
+	clear:both;
+}
+
+.copyright{
+	height:30px;
+	margin:0 auto;
+	padding-top:15px;
+	width:570px;
+	text-align:center
+}
+
+#footer #links ul{
+	display:block;
+	float:left;
+	margin:0 0 5px;
+	padding:0;
+	
+}
+#footer strong{
+	float:left;
+	color:#FFA472;
+}
+
+#footer #links ul li,strong{
+	float:left;
+	
+}
+#footer a {
+	color:#939186;
+}
+
+#footer span {
+	color:#939186;
+	font-size:12px;
+	margin-bottom:10px;
+}
+
+.publiclink li{
+		text-align:left;
+	    float: left;
+		line-height:20px;
+	    width:145px;
+		word-wrap: break-word;
+		word-break: break-all; 
+}
+
+/* pages */
+.pagination {
+            font-size: 13px;
+        }
+        
+.pagination a {
+    text-decoration: none;
+	border: solid 1px #AAE;
+	color: #15B;
+}
+
+.pagination a, .pagination span {
+    display: block;
+    float: left;
+    padding: 3px 5px;
+    margin-right: 5px;
+	margin-bottom: 5px;
+	min-width:1em;
+	text-align:center;
+}
+
+.pagination .current {
+    background: #00CC33;
+    color: #fff;
+	border: solid 1px #AAE;
+}
+
+.pagination .disabled {
+    background: #EEEEEE;
+    color: #fff;
+	border: solid 1px #AAE;
+}
+
+.pagination .current.prev, .pagination .current.next{
+	color:#999;
+	border-color:#999;
+	background:#fff;
+}
+
+.pagination select{
+	height:25px;
+	font-size:13px;
+	width:60px;
+	border: solid 1px #AAE;
+}
+
+* html .pages a.nextprev,.pages span.nextprev,.pages span.stat {
+	padding: 0.25em 0.5em 0.2em 0.5em;
+}
+
+input.errortips,textarea.errortips {
+	border:1px dotted #00CC33;
+}
+.description{
+	display:none;
+}
+
+div.nextprev {font-size: 14px;text-align: right;color: #666;border-top: 1px solid #f3f3f3;padding: 5px;}
+div.nextprev span.prev {float: left;}
+a,a:link, a:hover,a:visited {
+	text-decoration:none;
+}
+
+
+/* haker */
+.clear {
+    clear:both;
+}
+
+.clearer:after {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+	.clearer {display: inline-table;}
+	/* Hides from IE-mac \*/
+*	html .clearer {height: 1%;}
+	.clearer {display: block;}
+	/* End hides */
+
+
+
+
+
+
+
+	
+	

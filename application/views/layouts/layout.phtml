@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Pisceshow</title>
+<link rel="stylesheet" type="text/css"
+	href="<?php echo $this->baseUrl();?>/css/style.css" />
+<link rel="stylesheet" type="text/css"
+	href="<?php echo $this->baseUrl();?>/css/shCore.css" />
+<link rel="stylesheet" type="text/css"
+	href="<?php echo $this->baseUrl();?>/css/shThemeDefault.css" />
+<link rel="stylesheet" type="text/css"
+	href="<?php echo $this->baseUrl();?>/css/base.css" />
+<link rel="stylesheet" type="text/css"
+	href="<?php echo $this->baseUrl();?>/css/main.css" />
+<link rel="stylesheet" type="text/css"
+	href="<?php echo $this->baseUrl();?>/css/style.css" />
+<link rel="stylesheet" type="text/css"
+	href="<?php echo $this->baseUrl();?>/css/facebox.css" media="screen" />
+</head>
+<body>
+	<div id="header"></div>
+	<div id="content">
+    	<?php echo $this->layout()->sidebar;?>
+    	<?php echo $this->layout()->followers;?>
+    	<?php echo $this->layout()->newblog;?>
+    	<?php echo $this->layout()->content;?>
+	</div>
+	<div id="footer"></div>
+</body>
+</html>

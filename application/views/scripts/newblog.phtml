@@ -1,0 +1,37 @@
+<?php
+
+$blogdata = $this->data[blog];
+if ($blogdata)
+{
+    $link = '/blog/update';
+    $formName = '编辑博客';
+}
+else
+{
+    $link = '/blog/publish';
+    $formName = '新博客';
+}
+?>
+<div id='newblog' class='layout'>
+	<fieldset>
+		<section>
+			<form method="post" action="<?php echo $this->baseUrl() . $link;?>">
+				<h2><?php echo $formName;?></h2>
+				<fieldset id="inputs">
+					<input type="text" name="blog_title" placeholder="博客标题"
+						value='<?php echo $blogdata[blog_title];?>' required>
+				</fieldset>
+				<fieldset id="inputs">
+					<!-- 					<input type="text" name="blog_text" placeholder="博客内容" autofocus -->
+					<!-- 						required> -->
+					<textarea rows="10" cols="63" name="blog_text"><?php echo $blogdata[blog_text];?></textarea>
+				</fieldset>
+				<input type='hidden' name="blog_id"
+					value='<?php echo $blogdata[blog_id];?>'>
+				<fieldset>
+					<input type="submit" id="submit" value="发表">
+				</fieldset>
+			</form>
+		</section>
+	</fieldset>
+</div>

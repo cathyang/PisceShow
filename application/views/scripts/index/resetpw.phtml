@@ -1,0 +1,17 @@
+<section class="body">
+	<form id="form" method="post"
+		action="<?php echo $this->baseUrl() . '/index/resetpw/id/' . $this->data[rand] . base64_encode($this->data[user]);?>">
+		<h1>重置密码</h1>
+		<fieldset id="inputs">
+			<input id="new_passwd" type="password" name="new_passwd"
+				placeholder="新密码" required> <input id="renew_passwd" type="password"
+				name="renew_passwd" placeholder="确认密码" required>
+		</fieldset>
+		<fieldset id="actions">
+			<input type="submit" id="submit" value="重置密码"> <a
+				href="<?php echo $this->baseUrl();?>/index/index">主页</a>
+		</fieldset>
+		<a href="<?php echo $this->baseUrl();?>/index/index" id="back">主页</a>
+	</form>
+</section>
+<?php echo $this->data[error];?>

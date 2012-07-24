@@ -1,0 +1,89 @@
+<script type="text/javascript">
+	var xmlHttp;
+	function checkuser()
+	{
+		xmlHttp=getXmlHttpObject();
+		if (xmlHttp==null)
+		{
+			alert ("AJAX.");
+		    return;
+		}
+		var val = document.getElementById("login_name").value;
+		var url = "/index/checkuser/id/" + val;
+		xmlHttp.onreadystatechange=stateChanged;
+		xmlHttp.open("GET",url,true);
+		xmlHttp.send(null);
+	}
+	function stateChanged(){
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200){
+            if (xmlHttp.responseText.length)
+            {
+                document.getElementById("error").innerHTML= "<?php echo $this->getError(ERROR_NAME_EXIST);?>";
+            }
+            else
+            {
+            	document.getElementById("error").innerHTML= "";
+            }
+        }
+    }
+    function getXmlHttpObject(){
+        var xmlHttp=null;
+		try{
+		    // Firefox, Opera 8.0+, Safari
+		    xmlHttp=new XMLHttpRequest();
+		}
+		catch (e){
+		    // Internet Explorer
+		    try{
+		        xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+		    }
+		    catch (e){
+			    xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+		    }
+		}
+		return xmlHttp;
+	}
+	function get(URL) {        
+		var temp = document.createElement("form");        
+		temp.action = "<?php echo $this->baseUrl();?>" + URL;        
+		temp.method = "get";        
+		temp.style.display = "none";        
+		document.body.appendChild(temp);        
+		temp.submit();
+		return temp;        
+	}
+	function checkpasswd(){
+		var pass1 = document.getElementById("login_pass").value;
+		var pass2 = document.getElementById("relogin_pass").value;
+		var err = "";
+		if(pass1 != pass2){
+			err = '<?php echo $this->getError(ERROR_REPASSWD);?>';
+		}else{
+			err = "";
+		}
+		document.getElementById("error").innerHTML = err;
+	}
+</script>
+<section class="body">
+	<form id="form" method="post"
+		action="<?php echo $this->baseUrl();?>/index/regist">
+		<h1>注册</h1>
+		<fieldset id="inputs">
+			<input id="login_name" type="email" name="login_name"
+				placeholder="邮箱" autofocus required onblur="checkuser()"> <input
+				id="login_pass" type="password" name="login_pass" placeholder="密码"
+				required> <input id="relogin_pass" type="password"
+				name="relogin_pass" placeholder="确认密码" required
+				onblur="checkpasswd()">
+		</fieldset>
+		<input type="checkbox" value="agree" name="agree" />是否同意?
+		<fieldset id="actions">
+			<input type="submit" id="submit" value="注册"> <a
+				href="<?php echo $this->baseUrl();?>/">主页</a>
+		</fieldset>
+		<a href="<?php echo $this->baseUrl();?>/" id="back">主页</a>
+		<div id="error">
+			<b><?php echo $this->getError($this->data[error]);?></b>
+		</div>
+	</form>
+</section>

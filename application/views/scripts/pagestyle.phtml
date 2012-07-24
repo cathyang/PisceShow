@@ -1,0 +1,70 @@
+<?php
+$parameter = (array) $this->parameter;
+
+$routername = $this->routername;
+
+?>
+
+<?php if ($this->pageCount): ?>
+<div class="pagination">
+	<span>共有<?php  echo $this->totalItemCount; ?>条数据</span>
+
+	<!-- Previous page link --> 
+<?php if (isset($this->previous)): ?> 
+  <a
+		href="<?php echo $this->url(array_merge(array('page' => $this->previous),$parameter),$routername); ?>">上一页</a>   
+<?php endif; ?> 
+
+<?php if ($this->current>6): ?>
+ 
+	   <a
+		href="<?php echo $this->url(array_merge(array('page' =>1),$parameter),$routername); ?>">
+		1 </a>
+	<!-- Last page link -->
+	<a
+		href="<?php echo $this->url(array_merge(array('page' =>2),$parameter),$routername); ?>">
+		2 </a> <span>...</span>
+<?php endif; ?>
+
+<!-- Numbered page links -->
+<?php foreach ($this->pagesInRange as $page): ?> 
+  <?php if ($page != $this->current): ?>
+	<a
+		href="<?php echo $this->url(array_merge(array('page' =>$page),$parameter),$routername); ?>"><?php echo $page;?></a> 
+  <?php else: ?> <span class="current"><?php echo $page; ?></span> 
+  <?php endif; ?>
+<?php endforeach; ?> 
+
+<?php if (isset($this->last)): ?>
+	<?php if(($this->last-$this->current)>=6):?>
+	  <span>...</span> <a
+		href="<?php echo $this->url(array_merge(array('page' =>($this->last-1)),$parameter),$routername); ?>">
+	    <?php echo ($this->last-1);?>
+	  </a>
+	<!-- Last page link -->
+	<a
+		href="<?php echo $this->url(array_merge(array('page' =>$this->last),$parameter),$routername); ?>">
+	    <?php echo $this->last;?>
+	  </a>
+	<?php endif; ?>
+<?php endif; ?>
+<!-- Next page link --> 
+<?php if (isset($this->next)): ?> 
+  <a
+		href="<?php echo $this->url(array_merge(array('page' =>$this->next),$parameter),$routername); ?>">下一页</a>
+<?php endif; ?> 
+
+<select id="paginationControl"
+		onchange="window.location.href=this.value" size="1">
+<?php foreach ($this->pagesInRange as $page): ?>
+  <?php $selected = ($page == $this->current) ? ' selected="selected"' : ''; ?>
+  <option
+			value="<?php echo $this->url(array_merge(array('page' =>$page),$parameter),$routername); ?>"
+			<?= $selected ?>>
+    第<?php echo $page; ?>页
+  </option>
+<?php endforeach; ?>
+</select>
+
+</div>
+<?php endif; ?>

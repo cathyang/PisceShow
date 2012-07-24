@@ -1,0 +1,19 @@
+<section class="body">
+	<form id="form" method="post"
+		action="<?php echo $this->baseUrl();?>/index/changepw">
+		<h1>修改密码</h1>
+		<fieldset id="inputs">
+			<input id="old_passwd" type="text" name="old_passwd" placeholder="邮箱"
+				autofocus required> <input id="new_passwd" type="password"
+				name="new_passwd" placeholder="新密码" required> <input
+				id="renew_passwd" type="password" name="renew_passwd"
+				placeholder="确认密码" required>
+		</fieldset>
+		<fieldset id="actions">
+			<input type="submit" id="submit" value="修改密码"> <a
+				href="<?php echo $this->baseUrl();?>/">主页</a>
+		</fieldset>
+		<a href="<?php echo $this->baseUrl();?>/" id="back">主页</a>
+	</form>
+</section>
+<?php echo $this->data[error];?>

@@ -1,0 +1,49 @@
+<div id="followers">
+	<fieldset>
+		<table>
+			<tr>
+				<th></th>
+				<th></th>
+			</tr>
+			<tr>
+				<td>关注者列表: <br />
+
+<?php
+foreach ($this->data[followers] as $key => $val)
+{
+    ?>
+<img alt='head'
+					src="<?php echo $this->url(array('controller'=>'user','action'=>'showhead','id'=>$val))?>" />
+<?php
+    echo $val;
+    ?>
+<a
+					href='<?php echo $this->url(array('controller'=>'user','action'=>'unfollow','id'=>$val))?>'>取消关注</a>
+					<br />
+<?php
+}
+?>
+    </td>
+				<td>粉丝列表: <br />
+
+<?php
+foreach ($this->data[befollowers] as $key => $val)
+{
+    ?>
+<img alt='head'
+					src="<?php echo $this->url(array('controller'=>'user','action'=>'showhead','id'=>$val))?>" />
+<?php
+    echo $val;
+    ?>
+<a
+					href='<?php echo $this->url(array('controller'=>'user','action'=>'follow','id'=>$val))?>'>关注</a>
+					<br />
+<?php
+}
+?>
+		
+		</td>
+			</tr>
+		</table>
+	</fieldset>
+</div>

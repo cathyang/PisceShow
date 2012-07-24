@@ -1,0 +1,28 @@
+<?php
+$data = $this->data[users];
+// print_r($data);
+?>
+
+<br />
+
+<?php echo $this->data[error]?>
+
+<h2>所有用户</h2>
+<?php
+foreach ($data as $key => $val)
+{
+    ?>
+<img alt='head'
+	src="<?php echo $this->url(array('controller'=>'user','action'=>'showhead','id'=>$val[user_id]))?>" />
+<?php
+    echo $val[user_nick];
+    ?>
+<a
+	href='<?php echo $this->url(array('controller'=>'user','action'=>'follow','id'=>$val[user_id]))?>'>follow</a>
+<br />
+<?php
+}
+?>
+<br />
+<a
+	href='<?php echo $this->url(array('controller'=>'user','action'=>'home'))?>'>返回</a>

@@ -1,0 +1,22 @@
+<script type="text/javascript">
+	function refresh(){
+		document.getElementById("codeimg").src = "<?php echo $this->baseUrl();?>/common/show";
+	}
+</script>
+<section class="body">
+	<form id="form" method="post"
+		action="<?php echo $this->baseUrl();?>/index/forgetpwmail">
+		<h1>忘记密码</h1>
+		<fieldset id="inputs">
+			<input id="login_name" type="text" name="login_name" placeholder="邮箱"
+				autofocus required> <input id="code" type="text" name="code"
+				placeholder="验证码" required> <img id='codeimg' onclick="refresh()"
+				onmouseover="imgcodetips()" alt="error"
+				src="<?php echo $this->baseUrl();?>/common/show" />
+		</fieldset>
+		<fieldset id="actions">
+			<input type="submit" id="submit" value="发送">
+		</fieldset>
+		<a href="<?php echo $this->baseUrl();?>/index/index" id="back">主页</a>
+	</form>
+</section>

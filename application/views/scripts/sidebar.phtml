@@ -1,0 +1,44 @@
+<div id="sidebar" class="right">
+	<fieldset>	
+	<?php
+echo $this->data[error];
+$user = $this->data[user];
+?>
+
+<h2>你好,<?php echo $user[user_nick]; ?></h2>
+		<h2>
+			<a
+				href="<?php echo $this->url(array('controller'=>'index','action'=>'logout'))?>">登出</a>
+		</h2>
+
+		<h2>
+			<a
+				href="<?php echo $this->url(array('controller'=>'user','action'=>'search'))?>">所有用户</a>
+		</h2>
+
+		<h2>
+			<a
+				href="<?php echo $this->url(array('controller'=>'index','action'=>'changepw'))?>">新密码</a>
+		</h2>
+		<br /> <a
+			href='<?php echo $this->url(array('controller'=>'user','action'=>'search'))?>'><img
+			src="<?php echo $this->url(array('controller'=>'user','action'=>'showhead','id'=>$user[user_id]))?>" /></a>
+
+
+
+		<br />
+
+		<p>粉丝数:<?php echo $user[user_followers]?></p>
+		<br />
+		<p>关注者数:<?php echo $user[user_befollowers]?></p>
+		<br />
+		<p>博客数:<?php echo $user[user_blogs]?></p>
+		<br />
+		<form enctype="multipart/form-data" method="post"
+			action="<?php echo $this->baseUrl();?>/user/upload">
+			<!-- 	<input type="hidden" name="MAX_FILE_SIZE" value="100000000" />  -->
+			<input type="file" name="head_photo" /> <br /> <input type="submit"
+				value="Change head" />
+		</form>
+	</fieldset>
+</div>

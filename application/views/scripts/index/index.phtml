@@ -1,0 +1,54 @@
+<script type="text/javascript">
+	window.onload = function() {
+		if (('localStorage' in window) && window['localStorage'] != null) {
+			var username = localStorage.getItem("username");
+			if (null != username) {
+				document.getElementById('username').value = username;
+			}
+		} else {
+			alert('what a fucking explore!');
+		}
+	}
+
+	window.onbeforeunload = function() {
+		if (('localStorage' in window) && window['localStorage'] != null) {
+			var username = document.getElementById('username').value;
+			localStorage.setItem("username", username);
+		} else {
+			alert('what a fucking explore!');
+		}
+	}
+
+	function clear() {
+		if (('localStorage' in window) && window['localStorage'] != null) {
+			localStorage.removeItem("username");
+		} else {
+			alert('what a fucking explore!');
+		}
+	}
+
+	function refresh(){
+		document.getElementById("codeimg").src = "<?php echo $this->baseUrl();?>/common/show";
+	}
+</script>
+<section class="body">
+	<form id="form" method="post"
+		action="<?php echo $this->baseUrl();?>/index/index">
+		<h1>登录</h1>
+		<fieldset id="inputs">
+			<input id="login_name" type="email" name="login_name"
+				placeholder="邮箱" autofocus required> <input id="login_pass"
+				type="password" name="login_pass" placeholder="密码" required>
+		</fieldset>
+		<input id="code" type="text" name="code" placeholder="验证码" required> <img
+			id='codeimg' onclick="refresh()" onmouseover="imgcodetips()"
+			alt="error" src="<?php echo $this->baseUrl();?>/common/show" />
+		<fieldset id="actions">
+			<input type="submit" id="submit" value="登录"> <a
+				href="<?php echo $this->baseUrl();?>/index/forgotpw">忘记密码?</a><a
+				href="<?php echo $this->baseUrl();?>/index/regist">注册</a>
+		</fieldset>
+			<?php echo $this->getError($this->data[error]);?>
+			<a href="<?php echo $this->baseUrl();?>" id="back">主页</a>
+	</form>
+</section>

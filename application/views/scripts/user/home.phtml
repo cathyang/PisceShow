@@ -1,0 +1,55 @@
+<div class="layout">
+	<div id="contents">
+<?php
+foreach ($this->data[blogs] as $key => $val)
+{
+    ?>
+<fieldset>
+			<a
+				href='<?php echo $this->url(array('controller'=>'user','action'=>'search'))?>'><img
+				src="<?php echo $this->url(array('controller'=>'user','action'=>'showhead','id'=>$val[user_id]))?>" /></a>
+			<?php echo $val[user_nick];?>
+		<h2>
+				<a href=""><span class="color4"><?php echo $val[blog_title];?></span></a>
+			</h2>
+			<ul class="clear listarticle">
+				<li>时间:<span><?php echo date('Y年m月d日 H:i:s', $val['blog_publish']);?></span></li>
+				<li>顶:<span><?php echo $val['blog_up'];?></span>次
+				</li>
+				<li>踩:<span><?php echo $val['blog_down'];?></span>次
+				</li>
+			</ul>
+			<br />
+			<p><?php echo $val['blog_text'];?></p>
+			<p class="layout">
+				<a href="">点击更多...</a> <br />
+				<!-- 自己的博客才有删除和编辑功能 --> 
+				<?php if ($val[user_id] == $this->data[user][user_id]) {?>
+				    <a
+					href='<?php echo $this->url(array('controller'=>'blog','action'=>'delete','id'=>$val[blog_id]))?>'>删除</a>
+				<br /> <a
+					href='<?php echo $this->url(array('controller'=>'blog','action'=>'update','id'=>$val[blog_id]))?>'>编辑</a>
+				<?php }?>
+			</p>
+			<!-- 评论 -->
+			<form method="post"
+				action="<?php echo $this->baseUrl() . '/comment/publish';?>">
+
+				<input type="text" name="comment_text" placeholder="评论内容" required>
+				<input type="hidden" name="comment_blog"
+					value='<?php echo $val[blog_id];?>'> <input type="hidden"
+					name="comment_parent" value='0'> <input type="submit" value="发表">
+			</form>
+			<a
+				href='<?php echo $this->url(array('controller'=>'comment','action'=>'show','id'=>$val[blog_id]))?>'>评论列表</a>
+			<br /> <br />
+			<HR
+				style="FILTER: alpha(opacity =                         100, finishopacity =                         0, style =                         2)"
+				width="80%" color=#987cb9 SIZE=10>
+		</fieldset>
+<?php
+}
+?>
+<div><?php echo $this->paginationControl($this->paginator,'Elastic','pagestyle.phtml',array('parameter'=>array())); ?></div>
+	</div>
+</div>
